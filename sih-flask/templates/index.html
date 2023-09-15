@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=IBM+Plex+Serif:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.3);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+        70% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-30px);
+        }
+        60% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.5);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background: linear-gradient(
+            rgba(143, 188, 143, 0.5),
+            rgba(143, 188, 143, 0.5)
+          ),
+          url("../static/Background.jpeg") no-repeat center center fixed;
+        background-size: cover;
+        opacity: 0.2;
+      }
+      .navbar {
+        background-color: #8eac50;
+      }
+      .navbar-brand {
+        font-family: "IBM Plex Serif", serif;
+        font-weight: bold;
+        color: #004225;
+      }
+      .container {
+        padding: 0;
+      }
+      .header h1 {
+        font-family: "IBM Plex Serif", serif;
+        font-size: 5em;
+        font-weight: bold;
+        color: #004225;
+        animation: bounceIn 2s; /* Applying the bounceIn animation here */
+      }
+      .header h2 {
+        font-family: "Cedarville Cursive", cursive;
+        font-size: 3em;
+        color: #8eac50;
+        animation: fadeIn 2s, zoomIn 2s; /* Applying the fade-in and zoom-in animations here */
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .header div {
+        text-align: center;
+      }
+      .footer {
+        background-color: #8eac50;
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .footer-icon {
+        margin: 0 10px;
+      }
+      .btn-green {
+        background-color: green;
+      }
+    </style>
+
+    <title>Leaf Classifier</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">PaTtaKaro</a>
+      <!-- Add your navbar content here -->
+    </nav>
+
+    <div class="container mt-5">
+      <!-- First Div -->
+      <div class="row header">
+        <div class="col-4">
+          <img
+            src="../static/LogoLeaf2.png"
+            alt="Image Description"
+            style="width: 100%; height: auto"
+          />
+        </div>
+        <div class="col-8 header">
+          <div>
+            <h1>PaTtaKaro</h1>
+            <h2>the leaf identifier</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Div -->
+      <div class="row mt-4 justify-content-center text-center">
+        <div class="col-12">
+          <h4 style="font-size: smaller">Upload an image</h4>
+          <form
+            action="/"
+            method="post"
+            enctype="multipart/form-data"
+            class="d-inline-block"
+          >
+            <input
+              type="file"
+              class="form-control d-inline-block"
+              id="image"
+              name="image"
+              style="width: 70%"
+            />
+            <button type="submit" class="btn btn-green">Predict</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Third Div -->
+      <div class="row mt-4">
+        <div class="col-8">
+          <h2>Leaf Name</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod
+            malesuada. Sed facilisis, erat vitae imperdiet mollis, nulla nulla
+            volutpat tortor, vel facilisis urna tortor ut urna. Nunc eu bibendum
+            elit. In auctor massa non diam facilisis, ac pharetra est bibendum.
+            Fusce id feugiat nisl. Quisque id vehicula arcu, nec mollis risus.
+            Nullam in semper arcu. Morbi sed nunc sit amet odio fermentum
+            suscipit. Sed suscipit nibh sit amet ante dictum, eget cursus dui
+            iaculis. Fusce aliquam vestibulum sapien, id facilisis metus
+            facilisis in. Vivamus et elementum erat. Proin nec libero in lorem
+            ultrices condimentum a non urna. Curabitur non neque elit. Donec vel
+            neque non augue tristique venenatis. Fusce vehicula ante odio, nec
+            commodo nulla molestie id. Quisque sollicitudin.
+          </p>
+        </div>
+        <div class="col-4 mb-4">
+          <img
+            src="../static/curry1.jpg"
+            alt="Uploaded Image"
+            style="border: 2px solid green; width: 300px; height: auto"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center mt-4 footer">
+      <p>PaTtaKaro</p>
+      <a href="https://www.instagram.com/" class="footer-icon"
+        >Instagram Icon</a
+      >
+      <a href="https://www.facebook.com/" class="footer-icon">Facebook Icon</a>
+      <a href="https://twitter.com/" class="footer-icon">Twitter Icon</a>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
